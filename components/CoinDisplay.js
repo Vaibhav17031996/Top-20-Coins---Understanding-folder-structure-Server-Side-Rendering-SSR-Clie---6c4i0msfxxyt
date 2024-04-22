@@ -9,7 +9,7 @@ function CoinDisplay({ coin }) {
     const coinsData = await response.json();
     // console.log(coinsData);
     const top20Coins = await coinsData.data.slice(0, 20);
-    console.log(top20Coins);
+    // console.log(top20Coins);
     setCoins(top20Coins);
   }
 

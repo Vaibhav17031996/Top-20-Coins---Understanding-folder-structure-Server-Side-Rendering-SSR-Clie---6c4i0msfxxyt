@@ -8,6 +8,7 @@ function CoinDetail() {
   // console.log(router);
 
   async function getCoinDetails() {
+    // console.log(router.query.coin_id);
     try {
       const response = await fetch(
         `https://api.coinlore.net/api/ticker/?id=${router.query.coin_id}`
@@ -21,10 +22,10 @@ function CoinDetail() {
   }
 
   useEffect(() => {
-    if (router.query.coin_id) {
+    if (router.isReady && router.query.coin_id) {
       getCoinDetails();
     }
-  }, [router.query.coin_id]);
+  }, [router.isReady]);
 
   return (
     <div className="coin-detail">
